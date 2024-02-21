@@ -23,22 +23,23 @@ const MainPage = () => {
 
   return (
     <>
+      <EasterEggText $isShow={showEasterEgg}>
+        <TextWrap>
+          <PTagText>키윙 이스터 에그를 찾으셨네요!</PTagText>
+          <PTagText>키윙은 여러분의 멋진 삶을 응원합니다.</PTagText>
+        </TextWrap>
+      </EasterEggText>
+
+      {showEasterEgg && <EasterEgg />}
       <Layout>
-        <EasterEggText $isShow={showEasterEgg}>
-          <TextWrap>
-            <PTagText>키윙 이스터 에그를 찾으셨네요!</PTagText>
-            <PTagText>키윙은 여러분의 멋진 삶을 응원합니다.</PTagText>
-          </TextWrap>
-        </EasterEggText>
-
-        {showEasterEgg && <EasterEgg />}
-
-        <ImageLayout src="/kiwing_demo_main.png" delay={700} alt="메인 페이지 데모" />
-        <ImageLayout src="/kiwing_demo_myList.png" delay={1400} alt="내 꾸러미 데모" />
-        <ImageLayout src="/kiwing_demo_shared.png" delay={2000} alt="공유된 꾸러미 데모" />
+        <ImageLayout src="/kiwing_demo_main.png" delay={700} alt="메인 페이지" />
+        <ImageLayout src="/kiwing_demo_myList.png" delay={1400} alt="내 꾸러미 페이지" />
+        <ImageLayout src="/kiwing_demo_shared.png" delay={2000} alt="공유된 꾸러미 페이지" />
 
         <Intro>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center" }}
+          >
             <IntroImage
               src="/kiwing_circle_green.png"
               alt="키윙 로고 이미지 데모"
