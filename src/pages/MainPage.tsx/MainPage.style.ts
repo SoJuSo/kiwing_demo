@@ -55,22 +55,20 @@ export const Layout = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
-  height: 100vh;
-  gap: 3rem;
+  height: 100%;
   box-sizing: border-box;
-  padding: 2rem 0 1rem 0;
+  padding: 0 3rem;
 `;
 
 export const Intro = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 4rem;
   align-items: center;
   justify-content: center;
-  width: 28rem;
-  height: 40rem;
+  width: 25%;
+  height: auto;
   visibility: hidden;
 
   animation: ${slideInImage} 1s ease forwards;
@@ -82,18 +80,20 @@ export const Intro = styled.div`
 `;
 
 export const IntroImage = styled.img`
-  width: 25rem;
+  width: 100%;
+  max-width: 350px;
   height: auto;
-  margin: 1rem;
 `;
 
 export const EasterEggText = styled.span<{ $isShow: boolean }>`
   display: flex;
   flex-direction: column;
+  width: 100%;
   align-items: center;
   font-size: 1.8rem;
   position: absolute;
   top: 2rem;
+  z-index: 2;
 
   visibility: ${({ $isShow }) => ($isShow ? "visible" : "hidden")};
   transform: translateY(20%);
@@ -113,29 +113,30 @@ export const TextWrap = styled.div`
   padding: 0.5rem;
   flex-direction: column;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 2.5rem;
   box-shadow: 0.1rem 0.1rem 1rem 0.25rem rgba(55, 55, 55, 0.5);
   background-color: #48da79;
   color: #fefefe;
-  backdrop-filter: 1rem;
   border-radius: 1rem;
   transition: all 0.2s ease;
 `;
 
 export const IntroText = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.6vw;
   font-weight: bold;
   color: #fefefe;
+  white-space: nowrap;
 
   box-sizing: border-box;
   padding: 0.5rem;
 
-  line-height: 2rem;
+  line-height: 2vw;
   box-shadow: 0.1rem 0.1rem 1rem 0.25rem rgba(55, 55, 55, 0.3);
   background-color: #48da79;
   border-radius: 1rem;
