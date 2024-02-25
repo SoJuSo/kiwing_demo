@@ -21,8 +21,34 @@ const MainPage = () => {
     }, 5000);
   };
 
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [isImageMyLoaded, setIsImageMyLoaded] = useState(false);
+  const [isImageSharedLoaded, setIsImageSharedLoaded] = useState(false);
+  const [isImageCircleLoaded, setIsImageCircleLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+  };
+
+  const handleMyLoaded = () => {
+    setIsImageMyLoaded(true);
+  };
+
+  const handleSharedLoaded = () => {
+    setIsImageSharedLoaded(true);
+  };
+
+  const handleCircleLoad = () => {
+    setIsImageCircleLoaded(true);
+  };
+
   return (
     <>
+      <img style={{ display: "none" }} src="/kiwing_demo_main.png" onLoad={handleImageLoad} />
+      <img style={{ display: "none" }} src="/kiwing_demo_myList.png" onLoad={handleMyLoaded} />
+      <img style={{ display: "none" }} src="/kiwing_demo_shared.png" onLoad={handleSharedLoaded} />
+      <img style={{ display: "none" }} src="/kiwing_circle_green.png" onLoad={handleCircleLoad} />
+
       <EasterEggText $isShow={showEasterEgg}>
         <TextWrap>
           <PTagText>키윙 이스터 에그를 찾으셨네요!</PTagText>
@@ -31,27 +57,35 @@ const MainPage = () => {
       </EasterEggText>
 
       {showEasterEgg && <EasterEgg />}
-      <Layout>
-        <ImageLayout src="/kiwing_demo_main.png" delay={700} alt="메인 페이지" />
-        <ImageLayout src="/kiwing_demo_myList.png" delay={1400} alt="내 꾸러미 페이지" />
-        <ImageLayout src="/kiwing_demo_shared.png" delay={2000} alt="공유된 꾸러미 페이지" />
 
-        <Intro>
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center" }}
-          >
-            <IntroImage
-              src="/kiwing_circle_green.png"
-              alt="키윙 로고 이미지 데모"
-              onClick={handleLogoClick}
-            />
-            <IntroText>
-              <p>당신의 면접에 날개를, 키윙</p>
-              <p>면접 준비를 더 편하고 더 빠르게</p>
-            </IntroText>
-          </div>
-        </Intro>
-      </Layout>
+      {isImageLoaded && isImageMyLoaded && isImageCircleLoaded && isImageSharedLoaded && (
+        <Layout>
+          <ImageLayout src="/kiwing_demo_main.png" delay={700} alt="메인 페이지" />
+          <ImageLayout src="/kiwing_demo_myList.png" delay={1400} alt="내 꾸러미 페이지" />
+          <ImageLayout src="/kiwing_demo_shared.png" delay={2000} alt="공유된 꾸러미 페이지" />
+
+          <Intro>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem",
+                alignItems: "center",
+              }}
+            >
+              <IntroImage
+                src="/kiwing_circle_green.png"
+                alt="키윙 로고 이미지 데모"
+                onClick={handleLogoClick}
+              />
+              <IntroText>
+                <p>당신의 면접에 날개를, 키윙</p>
+                <p>면접 준비를 더 편하고 더 빠르게</p>
+              </IntroText>
+            </div>
+          </Intro>
+        </Layout>
+      )}
     </>
   );
 };
