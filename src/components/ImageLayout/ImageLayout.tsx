@@ -1,6 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ImageContainer, ImageSummary, ImageWrap } from "./ImageLayout.style";
 
-const ImageLayout = ({ src, delay, alt }: { src: string; delay: number; alt: string }) => {
+interface LayoutProps {
+  src: string;
+  delay: number;
+  alt: string;
+}
+
+const ImageLayout = ({ src, delay, alt }: LayoutProps) => {
   return (
     <ImageContainer $delay={delay}>
       <ImageWrap src={src} alt={alt} />
