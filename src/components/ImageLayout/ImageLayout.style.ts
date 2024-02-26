@@ -80,7 +80,7 @@ export const TextTitleContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   margin-bottom: 1vw;
 
   pointer-events: none;
