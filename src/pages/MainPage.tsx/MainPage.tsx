@@ -48,16 +48,13 @@ const MainPage = () => {
       <img style={{ display: "none" }} src="/kiwing_demo_myList.png" onLoad={handleMyLoaded} />
       <img style={{ display: "none" }} src="/kiwing_demo_shared.png" onLoad={handleSharedLoaded} />
       <img style={{ display: "none" }} src="/kiwing_circle_green.png" onLoad={handleCircleLoad} />
-
       <EasterEggText $isShow={showEasterEgg}>
         <TextWrap>
           <PTagText>키윙 이스터 에그를 찾으셨네요!</PTagText>
           <PTagText>키윙은 여러분의 멋진 삶을 응원합니다.</PTagText>
         </TextWrap>
       </EasterEggText>
-
       {showEasterEgg && <EasterEgg />}
-
       {isImageLoaded && isImageMyLoaded && isImageCircleLoaded && isImageSharedLoaded && (
         <Layout>
           <ImageLayout src="/kiwing_demo_main.png" delay={700} alt="메인 페이지" />
