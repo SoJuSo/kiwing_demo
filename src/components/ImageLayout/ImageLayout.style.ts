@@ -15,6 +15,7 @@ const slideIn = keyframes`
 
 export const ImageContainer = styled.div<{ $delay: number }>`
   position: relative;
+  user-select: none;
   transform: translateY(20%);
   animation: ${slideIn} ${({ $delay }) => `${$delay}ms`} ease forwards;
   width: 20%;
@@ -40,6 +41,17 @@ export const ImageWrap = styled.img`
   object-fit: contain;
 `;
 
+export const ReplaceImage = styled.div`
+  width: 100%;
+  height: auto;
+  backdrop-filter: 1.2px;
+  background-color: #009c4dfc;
+  border-radius: 1vw;
+  padding: 1rem;
+  box-sizing: border-box;
+  aspect-ratio: 3385 / 6992;
+`;
+
 export const ImageSummary = styled.div`
   position: absolute;
   z-index: -1;
@@ -61,4 +73,28 @@ export const ImageSummary = styled.div`
     color: #fefefe;
     border-radius: 1rem;
   }
+`;
+
+export const TextTitleContainer = styled.div`
+  color: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5vw;
+  margin-bottom: 1vw;
+
+  pointer-events: none;
+  font-weight: 700;
+`;
+
+export const TextBodyContainer = styled.p`
+  color: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1vw;
+  margin-bottom: 1vw;
+  pointer-events: none;
+  font-weight: 550;
+  line-height: normal;
 `;
